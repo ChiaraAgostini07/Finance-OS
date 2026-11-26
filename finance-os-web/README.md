@@ -1,6 +1,6 @@
 # Finance OS Web — alpha 0.1
 
-Adattamento iniziale, local-first, della specifica desktop in `docs/specifica-originale.md`. Interfaccia italiana, responsive, senza dipendenze esterne o server applicativo. Non è una riscrittura completa del programma WPF.
+Adattamento iniziale, local-first, della specifica desktop fornita dall’utente (non inclusa nell’archivio di distribuzione). Interfaccia italiana, responsive, senza dipendenze esterne o server applicativo. Non è una riscrittura completa del programma WPF.
 
 ## Avvio
 
@@ -22,8 +22,10 @@ Non implementati: parità SQLite/EF/DPAPI e migrazione DB, 104 categorie gerarch
 
 `npm test` verifica le regole contabili implementate. I test non equivalgono alla suite originale. La UI non è stata sottoposta a test end-to-end.
 
-## Ad Astra — redesign grafico
+## Redesign — Finance OS
 
-Nuova schermata di accesso a due colonne, astrolabio originale in SVG, orbite animate (rispettano `prefers-reduced-motion`), navigazione a sezioni, scheda patrimonio e widget ridisegnati. Il tema scuro è predefinito per i nuovi profili; le preferenze dei profili esistenti rimangono invariate. Nessun font o asset remoto. Il formato dei dati e la chiave di archiviazione locale non sono cambiati.
+Nuovo design professionale: verde bosco, avorio, iconografia vettoriale, schermata di accesso con illustrazione finanziaria e valori di esempio esplicitamente identificati, scheda patrimoniale con dati reali, responsive. Nessun font o asset remoto. I nuovi profili partono dal tema chiaro, quelli esistenti conservano le preferenze. Chiave e formato di archiviazione invariati.
 
-Per aggiornare GitHub Pages, sovrascrivere il contenuto della cartella `finance-os-web` mantenendo il percorso e includendo `assets/astrolabe.svg`. Non caricare dati personali o backup. I cinque test contabili passano; verifica sintattica JS superata. I test di navigazione Chromium sono stati bloccati dall'ambiente di esecuzione (`ERR_BLOCKED_BY_ADMINISTRATOR`): non dichiarati superati.
+Per aggiornare GitHub Pages, sovrascrivere i file nella sottocartella `finance-os-web` mantenendo lo stesso percorso e includendo `assets/finance-icon.svg`. Non pubblicare backup, esportazioni o documenti con dati personali. La specifica originale è esclusa dal pacchetto pubblico perché contiene anche percorsi locali.
+
+Verifica: cinque test contabili superati, sintassi JavaScript verificata; test Node di registrazione, accesso, cifratura e generazione del markup superato. La navigazione Chromium è bloccata dall’ambiente (ERR_BLOCKED_BY_ADMINISTRATOR), quindi non è stato possibile completare la verifica visiva o end-to-end.
