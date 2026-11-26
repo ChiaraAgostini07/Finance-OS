@@ -76,3 +76,14 @@ Ogni obiettivo occupa una scheda orizzontale: dati e azioni a sinistra, salvadan
 
 ### 0.2.6 — Palette coordinata
 16 colori comuni per interfaccia, carte e salvadanai; le tre preferenze sono indipendenti e salvate nel profilo. Gli obiettivi esistenti senza colore mantengono il verde predefinito. La homepage pubblica conserva lo stile Studio.
+
+### 0.2.7 — Wealth
+Aggiornamento incrementale della versione Palette. Conservati tutti i 24 file originali; `domain.js`, `store.js`, `goals.js`, `pro.js`, `palette.js`, i CSS originali e gli asset sono identici a 0.2.6. Nuovi moduli: `wealth.js`, `wealth-ui.js`, `wealth.css`, `tests/wealth.test.js`.
+- Patrimonio: cassaforte animata per una riserva dichiarata, mappa delle attività e indicatore orientativo di salute finanziaria. La riserva non è un nuovo saldo. Il portafoglio manuale rimane escluso dal patrimonio per evitare doppio conteggio, come nella versione precedente.
+- Portafoglio: albero vettoriale per costo di carico e guadagno non realizzato. Nessun prezzo stimato.
+- Report: Finance Wrapped mensile/annuale, storico reale dei flussi e degli obiettivi.
+- Ricorrenti: abbonamenti, scadenze e costi equivalenti; monogrammi locali, non loghi ufficiali; nessuna disdetta automatica.
+- Pianificazione: desideri collegabili agli obiettivi, acquisti, sfide anche 52 settimane, debiti e rate. Registri separati, senza generazione automatica di movimenti.
+- Diario; allegati immagine ai movimenti (max 300 KB); esportazione selettiva e lettura di copie JSON in chiaro, non sincronizzazione multiutente.
+- I dati aggiuntivi sono salvati nel profilo esistente (`extras` o allegato sul movimento). Mantieni il medesimo URL e fai un backup prima di aggiornare. PWA conservata, cache aggiornata.
+- Test: 30 automatici; navigazione e operazioni principali in Chromium con moduli caricati in memoria e UUID simulati soltanto nel test (restrizioni di rete dell'ambiente). Deploy HTTPS e installazione PWA da verificare.
