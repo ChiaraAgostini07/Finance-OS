@@ -49,3 +49,12 @@ Mantiene l'interfaccia Studio precedente. Caricare tutti i file nella stessa sot
 - PWA: manifest, icone e service worker per risorse statiche; l'installabilità dipende da browser e HTTPS. Non si tratta di un'app nativa. Il service worker non salva dati finanziari nella cache.
 
 Verifiche: 11 test Node superati; sintassi JS verificata; Chromium ha verificato DOM e interazioni della demo mediante caricamento locale in pagina (navigazione, modifica conto/movimento, calendario, simulatore). L'accesso HTTP al server locale è bloccato nell'ambiente di verifica: non sono stati testati end-to-end installazione PWA, login cifrato e pubblicazione GitHub Pages in questa revisione. Le funzionalità avanzate mancanti della specifica desktop non sono state introdotte da questo aggiornamento.
+
+## Aggiornamento 0.2.1
+
+- Mantiene il CSS di Studio e tutti i moduli di Studio Plus.
+- Menu laterale: conserva lo scorrimento durante la navigazione e il salvataggio; su mobile conserva anche lo scorrimento orizzontale.
+- Carte con proporzioni ISO ID-1 (85,6 × 53,98), chip e grafica contactless decorativi, quattro colori con campioni visivi; il salvia è più saturo. Non sono carte di pagamento reali.
+- Obiettivi: salvadanaio SVG con livello proporzionale al risparmio e animazione di riempimento, rispetto delle preferenze di movimento ridotto. Accantona aggiorna soltanto il valore del risparmio, senza creare un movimento bancario.
+- Nessuna modifica allo schema dei profili o ai dati già salvati.
+- Verifiche: 11 test Node e test UI Chromium su demo tramite caricamento in memoria; navigazione di rete e PWA non verificabili nell’ambiente.

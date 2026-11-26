@@ -6,3 +6,32 @@
 .report-cover{border-left:4px solid #176b57}.report-cover h2{font-size:25px;margin:6px 0}.report-cover p{color:var(--muted)}.hide-money .donut{filter:blur(8px)}.hide-money .hero-lines{visibility:hidden}.hide-money .table td:has(.money-value){filter:blur(8px)}html[data-accent=blu] button:not(.secondary):not(.text-button):not(.bank-edit):not(.hero-button){background:#3865a2;color:white}html[data-accent=petrolio] button:not(.secondary):not(.text-button):not(.bank-edit):not(.hero-button){background:#1c7680;color:white}
 @media print{.app-header .row,.app-footer,.hero-button{display:none!important}.report-cover{background:#fff!important;color:#17263a!important}.panel{background:#fff!important;color:#17263a!important;border:1px solid #dce3df!important}.metric-foot,.muted,small{color:#526169!important}.table{overflow:visible!important}.table th:last-child:empty,.table td:last-child:has(button){display:none!important}}
 .trend-svg{height:clamp(135px,16vw,205px)}.pro-trend .trend-total{margin-top:12px}
+/* Studio 0.2.1 — cards, real savings visualisation, original Studio palette. */
+.layout>aside{overflow-anchor:none;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.layout>aside>nav{overflow-anchor:none;flex-shrink:0}
+.pro-accounts{grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));align-items:start;gap:22px}
+.bank-item{width:100%;max-width:400px;min-width:0;display:grid;gap:8px}
+.bank-card{width:100%;aspect-ratio:85.6 / 53.98;min-height:0;padding:6%;gap:0;border-radius:clamp(12px,1.4vw,20px);box-shadow:0 10px 22px #142e3524,inset 0 1px 1px #ffffff35;container-type:inline-size;border:1px solid #00000012}
+.bank-card:before{width:68%;height:120%;right:-23%;top:-22%;opacity:.16;box-shadow:0 0 0 1px currentColor,0 0 0 20px #ffffff12,0 0 0 21px currentColor,0 0 0 40px #ffffff09,0 0 0 41px currentColor;transform:rotate(-32deg);border-radius:46%}
+.bank-card:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,#ffffff15,transparent 50%,#00000012);pointer-events:none}
+.tone-forest{background:linear-gradient(125deg,#153b40,#20565a);color:#fff}
+.tone-sage{background:linear-gradient(125deg,#94b99e,#72a38a);color:#142e26}
+.tone-navy{background:linear-gradient(125deg,#24354d,#344965);color:#fff}
+.tone-sand{background:linear-gradient(125deg,#e1c48d,#c9a36a);color:#392b1c}
+.bank-top{font-size:clamp(10px,3.6cqw,14px);gap:6px;min-width:0;line-height:1.2}
+.bank-institution,.bank-bottom>span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;max-width:60%;font-weight:650}
+.bank-type{font-size:clamp(8px,2.8cqw,11px);text-align:right;opacity:.9;flex:none}
+.bank-hardware{display:flex;align-items:center;gap:9px;margin-top:2%;height:20%}
+.bank-chip{width:13%;max-width:42px;height:auto;filter:drop-shadow(0 1px 1px #0003)}
+.bank-tap{display:flex;opacity:.85}.bank-tap svg{width:18px;height:18px}
+.bank-balance{min-width:0}.bank-balance small{font-size:clamp(10px,3.4cqw,13px);opacity:1}
+.bank-card strong{font-size:clamp(15px,7cqw,29px);line-height:1.14;letter-spacing:-.025em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.bank-brand{font-size:clamp(8px,2.9cqw,12px);letter-spacing:.08em;white-space:nowrap;font-weight:400}.bank-brand b{font-weight:750}
+.bank-item>.bank-edit{justify-self:end;color:var(--text);background:var(--panel)!important;border:1px solid var(--line);padding:8px 11px;font-size:12px;box-shadow:none}
+.card-color-picker{border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:0;min-width:0}.card-color-picker legend{color:var(--muted);font-size:12px;font-weight:600}.card-color-picker label{display:flex;align-items:center;gap:7px;padding:7px;cursor:pointer;border-radius:7px;color:var(--text)}.card-color-picker label:has(input:checked){background:var(--soft);outline:1px solid var(--accent)}.card-color-picker input{width:auto;accent-color:#12664f}.color-swatch{width:25px;height:18px;border:1px solid #0002;border-radius:4px;flex:none}
+.goal-card .pro-head{align-items:center}.goal-percent{font-size:12px;color:var(--accent)}.pig-progress{background:var(--soft);border:1px solid var(--line);border-radius:12px;color:var(--text);padding:12px 14px 9px;overflow:hidden}.pig-progress svg{display:block;width:100%;height:155px;max-width:260px;margin:auto;overflow:hidden}.pig-glass{fill:#dcece4;fill-opacity:.65;stroke:none}.pig-outline{fill:none;stroke:#39735e;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}.pig-slot{stroke:#39735e;stroke-width:4;stroke-linecap:round;fill:none}.pig-fill{transform:translateY(var(--pig-shift));animation:pig-rise 1.25s cubic-bezier(.22,.8,.25,1) both}.pig-drop{opacity:0;animation:pig-deposit .8s .05s ease-in both}.pig-caption{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted)}.pig-caption b{color:var(--accent)}.goal-card .row button{font-size:12px;padding:9px 11px}.goal-card .goal-photo{height:92px}.hide-money .pig-progress,.hide-money .goal-percent{filter:blur(8px);user-select:none}
+@keyframes pig-rise{from{transform:translateY(var(--pig-start))}to{transform:translateY(var(--pig-shift))}}@keyframes pig-deposit{0%{opacity:0;transform:translateY(-24px)}20%{opacity:1}85%{opacity:1;transform:translateY(19px)}100%{opacity:0;transform:translateY(25px)}}
+html[data-theme=dark] .pig-glass{fill:#324b3e}html[data-theme=dark] .pig-outline,html[data-theme=dark] .pig-slot{stroke:#9edbb5}
+@media(prefers-color-scheme:dark){html[data-theme=system] .pig-glass{fill:#324b3e}html[data-theme=system] .pig-outline,html[data-theme=system] .pig-slot{stroke:#9edbb5}}
+@media(max-width:500px){.card-color-picker{grid-template-columns:1fr}.bank-item{max-width:100%}.pig-progress svg{height:145px}}
+@media(prefers-reduced-motion:reduce){.pig-drop{display:none}.pig-fill{animation:none;transform:translateY(var(--pig-shift))}}
