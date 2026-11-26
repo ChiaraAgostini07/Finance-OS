@@ -58,3 +58,6 @@ Verifiche: 11 test Node superati; sintassi JS verificata; Chromium ha verificato
 - Obiettivi: salvadanaio SVG con livello proporzionale al risparmio e animazione di riempimento, rispetto delle preferenze di movimento ridotto. Accantona aggiorna soltanto il valore del risparmio, senza creare un movimento bancario.
 - Nessuna modifica allo schema dei profili o ai dati già salvati.
 - Verifiche: 11 test Node e test UI Chromium su demo tramite caricamento in memoria; navigazione di rete e PWA non verificabili nell’ambiente.
+
+### 0.2.2 — Obiettivi
+Versamenti e prelievi direttamente nella scheda, storico locale, salvadanaio SVG con effetto tridimensionale e animazione delle singole monete e banconote. Il progresso è salvato nello stesso profilo cifrato; gli accantonamenti non generano movimenti bancari. Lo storico parte da questa versione.
