@@ -21,3 +21,9 @@ Non implementati: parità SQLite/EF/DPAPI e migrazione DB, 104 categorie gerarch
 ## Test
 
 `npm test` verifica le regole contabili implementate. I test non equivalgono alla suite originale. La UI non è stata sottoposta a test end-to-end.
+
+## Ad Astra — redesign grafico
+
+Nuova schermata di accesso a due colonne, astrolabio originale in SVG, orbite animate (rispettano `prefers-reduced-motion`), navigazione a sezioni, scheda patrimonio e widget ridisegnati. Il tema scuro è predefinito per i nuovi profili; le preferenze dei profili esistenti rimangono invariate. Nessun font o asset remoto. Il formato dei dati e la chiave di archiviazione locale non sono cambiati.
+
+Per aggiornare GitHub Pages, sovrascrivere il contenuto della cartella `finance-os-web` mantenendo il percorso e includendo `assets/astrolabe.svg`. Non caricare dati personali o backup. I cinque test contabili passano; verifica sintattica JS superata. I test di navigazione Chromium sono stati bloccati dall'ambiente di esecuzione (`ERR_BLOCKED_BY_ADMINISTRATOR`): non dichiarati superati.
