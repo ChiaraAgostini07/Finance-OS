@@ -61,3 +61,8 @@ Verifiche: 11 test Node superati; sintassi JS verificata; Chromium ha verificato
 
 ### 0.2.2 — Obiettivi
 Versamenti e prelievi direttamente nella scheda, storico locale, salvadanaio SVG con effetto tridimensionale e animazione delle singole monete e banconote. Il progresso è salvato nello stesso profilo cifrato; gli accantonamenti non generano movimenti bancari. Lo storico parte da questa versione.
+
+### 0.2.3 — Salvadanaio animato
+Monete e banconote individuali con disposizione irregolare deterministica, senza righe. Effetti di entrata e uscita, progresso animato, confetti al primo raggiungimento del 100% mediante un accantonamento. Il pulsante Svuota richiede conferma, registra l'importo esatto nello storico e azzera solo il risparmio dell'obiettivo; martello, frammenti e denaro che cade, poi salvadanaio vuoto. Le animazioni rispettano la preferenza di movimento ridotto. Nessuna modifica ai conti, ai movimenti o allo schema dati. Le illustrazioni sono SVG con profondità simulata, non modelli 3D. Test: 18 Node superati; test UI Chromium con moduli caricati in memoria (navigazione HTTP bloccata dall'ambiente). Verifica pubblicazione e PWA ancora da effettuare.
+
+Aggiornamento: sovrascrivere i file nella stessa sottocartella `finance-os-web` di GitHub Pages, senza aggiungere una sottocartella duplicata. Il pacchetto patch contiene solo i file modificati rispetto a 0.2.2. Conservare un backup cifrato prima di aggiornare; non pubblicare il backup nella repository.
