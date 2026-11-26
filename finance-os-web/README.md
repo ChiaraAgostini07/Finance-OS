@@ -73,3 +73,6 @@ Verifiche 0.2.4: 21 test Node superati; test demo Chromium con moduli caricati i
 
 ### 0.2.5 — Layout obiettivi
 Ogni obiettivo occupa una scheda orizzontale: dati e azioni a sinistra, salvadanaio animato a destra, storico e azioni di gestione sotto. Su schermi stretti le due colonne si dispongono verticalmente. Nessuna modifica al formato dei dati o al motore delle animazioni. Risorse e cache PWA aggiornate per la nuova versione. Test: 21 Node superati; Chromium in memoria ha verificato disposizione desktop (1440 px) e mobile (390 px), versamento, prelievo, annullamento/svuotamento, causali, completamento e storico senza errori JavaScript. Pubblicazione GitHub Pages e aggiornamento della PWA non verificati.
+
+### 0.2.6 — Palette coordinata
+16 colori comuni per interfaccia, carte e salvadanai; le tre preferenze sono indipendenti e salvate nel profilo. Gli obiettivi esistenti senza colore mantengono il verde predefinito. La homepage pubblica conserva lo stile Studio.
