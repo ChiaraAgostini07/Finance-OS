@@ -34,3 +34,18 @@ Verifica: cinque test contabili superati, sintassi JavaScript verificata; test N
 La home pubblica offre una demo interattiva con dati sintetici, non salvati. I profili reali restano locali e cifrati. La dashboard usa grafici e categorie calcolati sui movimenti; il grafico della home è illustrativo. Nessuna dipendenza esterna.
 
 Verifica revisione: test contabili e smoke test DOM simulato superati. Verifica visiva Chromium non completata: navigazione locale bloccata dalla policy del browser di test.
+
+## Studio 0.2 — aggiornamento funzionale
+
+Mantiene l'interfaccia Studio precedente. Caricare tutti i file nella stessa sottocartella GitHub Pages (non cambiare origine o percorso di pubblicazione). I profili esistenti continuano a usare la stessa chiave di archiviazione; consigliato un backup cifrato prima dell'aggiornamento. Non cancellare i dati del browser.
+
+- Dashboard: andamento storico dei saldi dei conti (non del patrimonio storico completo), periodi 1S–1A, analisi mensile e confronto categorie; ordine drag-and-drop o frecce e tre dimensioni dei widget, salvati nel profilo. Il grafico storico usa il periodo corrente indipendentemente dal selettore del mese.
+- Conti: carte colorate, istituto e nome personalizzabili. La modalità privacy oscura visivamente gli importi e alcuni grafici: non è un controllo di accesso e non protegge i dati da chi usa il dispositivo.
+- Movimenti: modifica dei singoli movimenti non suddivisi e non appartenenti a trasferimenti. I trasferimenti restano indivisibili; eliminazione e nuova registrazione per correggerli.
+- Obiettivi: foto locale opzionale fino a 300 KB, modifica dati e stima indicativa dei versamenti mensili; nessuna sincronizzazione con banche.
+- Calendario: ricorrenze settimanali/mensili/annuali e movimenti registrati; nessuna generazione automatica di movimenti.
+- Previsioni: scenario prudenziale a 90 giorni, sole uscite ricorrenti, non entrate o altre operazioni future; simulatore a rendimento costante lordo, puramente illustrativo.
+- Ricerca Ctrl/Command+K; avvisi locali per scadenze e budget (non notifiche push); guida iniziale; tre accenti cromatici; FAQ, novità e collegamenti in homepage; stampa mensile con salvataggio PDF tramite browser.
+- PWA: manifest, icone e service worker per risorse statiche; l'installabilità dipende da browser e HTTPS. Non si tratta di un'app nativa. Il service worker non salva dati finanziari nella cache.
+
+Verifiche: 11 test Node superati; sintassi JS verificata; Chromium ha verificato DOM e interazioni della demo mediante caricamento locale in pagina (navigazione, modifica conto/movimento, calendario, simulatore). L'accesso HTTP al server locale è bloccato nell'ambiente di verifica: non sono stati testati end-to-end installazione PWA, login cifrato e pubblicazione GitHub Pages in questa revisione. Le funzionalità avanzate mancanti della specifica desktop non sono state introdotte da questo aggiornamento.

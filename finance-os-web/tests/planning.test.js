@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import * as p from '../src/planning.js';import * as d from '../src/domain.js';
+test('Fine mese e anni bisestili',()=>{assert.equal(p.monthEnd('2028-02'),'2028-02-29');assert.equal(p.previous('2026-01'),'2025-12')});
+test('Ricorrenza mensile dal 31 senza deriva',()=>{assert.deepEqual(p.occurrences([{date:'2026-01-31',frequency:'monthly',amount:100}], '2026-02-01','2026-03-31').map(r=>r.day),['2026-02-28','2026-03-31'])});
+test('Saldo storico ricostruito senza operazioni future',()=>{let s=d.empty();s.accounts=[{id:'a',opening:10000,date:'2026-01-01'}];s.transactions=[{account:'a',date:'2026-01-03',amount:5000,status:'Confirmed'}];assert.deepEqual(p.history(s,2,'2026-01-03').map(x=>x.value),[10000,10000,15000])});
+test('Obiettivo mensile e scadenza superata',()=>{assert.equal(p.goalMonthly({amount:100000,saved:40000,date:'2026-03-01'},'2026-02-01'),60000);assert.equal(p.goalMonthly({amount:10,saved:0,date:'2026-01-01'},'2026-02-01'),null)});
+test('Previsione considera ricorrenze future, non quelle di oggi',()=>{let s=d.empty();s.accounts=[{id:'a',opening:100000,date:'2026-01-01'}];s.recurring=[{date:'2026-01-01',frequency:'monthly',amount:10000,name:'Test'}];let r=p.projection(s,60,'2026-01-01');assert.equal(r.final,80000);assert.equal(r.events.length,2)});
+test('Simulazione rendimento zero, versamenti senza crescita',()=>{assert.equal(p.growth(1000,100,0,2).at(-1).value,3400);assert.throws(()=>p.growth(10,0,-100,1))});
