@@ -53,3 +53,22 @@ html[data-theme=dark] .pig-celebrate{color:#c7e6d3}@media(prefers-color-scheme:d
 
 /* Causali delle operazioni di risparmio */
 .goal-optional{font-weight:400;color:var(--muted)}.goal-action label small{font-weight:400;font-size:11px;color:var(--muted)}.goal-history-description{display:grid;gap:3px;min-width:0}.goal-history-reason{color:var(--text);font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}.goal-history-row b{flex-shrink:0}
+
+/* 0.2.5 — Savings goal layout: inputs at left, live pig at right. */
+.goal-grid{grid-template-columns:minmax(0,1fr);gap:16px}
+.goal-card{container-type:inline-size;gap:14px}
+.goal-split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:24px}
+.goal-fields{min-width:0;display:flex;flex-direction:column;gap:8px}
+.goal-fields>.pro-head{margin-bottom:3px}
+.goal-fields>strong{font-size:24px;line-height:1.25;overflow-wrap:anywhere}
+.goal-fields>strong small{font-size:13px;color:var(--muted)}
+.goal-fields .goal-photo{max-width:180px;height:76px;object-fit:cover}
+.goal-fields .goal-action{margin-top:4px}
+.goal-fields .goal-action-buttons{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.goal-illustration{min-width:0;width:100%;align-self:center}
+.goal-card .goal-illustration .pig-progress{padding:14px 14px 16px}
+.goal-card .goal-illustration svg{width:100%;height:auto;max-width:370px}
+.goal-card .goal-history{margin:0;padding:12px 0 4px}
+.goal-card>.row{margin-top:0}
+@container (max-width:580px){.goal-split{grid-template-columns:minmax(0,1fr);gap:14px}.goal-fields>strong{font-size:22px}.goal-card .goal-illustration svg{max-width:270px}}
+@media(max-width:560px){.goal-split{grid-template-columns:minmax(0,1fr);gap:14px}.goal-card .goal-illustration svg{max-width:270px}}
