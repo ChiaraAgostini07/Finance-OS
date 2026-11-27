@@ -1,6 +1,6 @@
-import {wirePrivateSearch,showPrivateAccess} from './private-ui.js?v=19';
-import {palette,colorEntries,colorKey,colorOf,defaultCardColors} from './palette.js?v=13';
-import {goalProgress,updateSavings,emptySavings,scatteredCash} from './goals.js?v=13';
+import {wirePrivateSearch,showPrivateAccess} from './private-ui.js?v=21';
+import {palette,colorEntries,colorKey,colorOf,defaultCardColors} from './palette.js?v=21';
+import {goalProgress,updateSavings,emptySavings,scatteredCash} from './goals.js?v=21';
 import * as d from './domain.js';import * as p from './planning.js';
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=d.money, amount=n=>`<span class="money-value">${money(n)}</span>`;

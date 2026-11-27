@@ -1,4 +1,4 @@
-import {createPrivate,unlockPrivate,newPrivateWorkspace} from './private-ledger.js?v=19';
+import {createPrivate,unlockPrivate,newPrivateWorkspace} from './private-ledger.js?v=21';
 // Existence is visible; contents require a separate password. No password is persisted.
 export function showPrivateAccess({s,change,modal,demo,enterPrivate}){
  const configured=!!s.privateEnvelope;
