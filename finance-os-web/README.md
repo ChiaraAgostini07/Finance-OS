@@ -61,7 +61,3 @@ Verifiche: 11 test Node superati; sintassi JS verificata; Chromium ha verificato
 
 ### 0.2.2 — Obiettivi
 Versamenti e prelievi direttamente nella scheda, storico locale, salvadanaio SVG con effetto tridimensionale e animazione delle singole monete e banconote. Il progresso è salvato nello stesso profilo cifrato; gli accantonamenti non generano movimenti bancari. Lo storico parte da questa versione.
-
-
-## 0.2.3 — archivio completo
-Ripristinata la base 0.2.2 con cifratura AES-GCM e importi a quattro decimali; nessuna migrazione dei dati. Cassaforte con apertura/chiusura, contenuto proporzionale al risparmio e aiuti contestuali accessibili con clic/tastiera. La guida già presente rimane disponibile. Non usare lo ZIP Goals-Guide-Update precedente. I dati non vanno caricati su GitHub.
