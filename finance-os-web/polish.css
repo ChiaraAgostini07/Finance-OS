@@ -1,0 +1,74 @@
+/* Wealth 0.3 — additive layout refinements, using the existing color system. */
+.layout main{font-variant-numeric:tabular-nums}
+.layout .app-header{align-items:flex-end;gap:16px 24px}
+.layout .app-header h1{line-height:1.2;margin-bottom:6px}
+.layout .header-controls{gap:8px;align-items:flex-end;flex-wrap:wrap}
+.layout .header-controls>button{min-height:44px;white-space:nowrap}
+.layout .header-controls input{height:44px;max-width:100%}
+.layout .panel:not(.hero){min-width:0}
+.layout .panel h2{line-height:1.35;overflow-wrap:anywhere}
+.layout .panel h3{line-height:1.35;overflow-wrap:anywhere}
+.layout .metric-top{align-items:center;min-height:36px}
+.layout .metric-top h2{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.layout .metric-top h2 .help-dot{margin-left:0}
+.layout .metric strong{line-height:1.18}
+.layout .metric-foot{margin-top:auto}
+.layout .form{grid-template-columns:repeat(auto-fit,minmax(min(100%,165px),1fr));gap:14px;align-items:end}
+.layout .form>label,.layout .form>.help-field{min-width:0;align-self:end}
+.layout .form>label,.layout .form>.help-field>label{line-height:1.45;gap:7px}
+.layout .form input:not([type=checkbox]):not([type=radio]),.layout .form select,.layout .form>button{min-height:44px;max-width:100%}
+.layout .form>button{justify-self:stretch;align-self:end;line-height:1.3}
+.layout .help-field-caption{line-height:1.45;min-height:22px;display:flex;align-items:center;overflow-wrap:anywhere}
+.layout .help-field>.help-dot{top:0;right:0}
+.layout .form label:has(input[type=checkbox]){display:flex;align-items:center}
+.layout textarea,.pro-dialog textarea{font:inherit;min-width:0;max-width:100%;width:100%;padding:11px 12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:8px;resize:vertical}
+.layout .table{max-width:100%;overflow-x:auto}
+.layout .table table{width:100%;border-collapse:collapse}
+.layout .table th,.layout .table td{vertical-align:middle;line-height:1.45}
+.layout .table td:not(:last-child){overflow-wrap:anywhere}
+.layout .table td:last-child{text-align:right}
+.layout .wealth-line{align-items:center;min-width:0;gap:12px}
+.layout .wealth-line>span,.layout .wealth-line>strong{overflow-wrap:anywhere;min-width:0}
+.layout .wealth-stats>div{display:flex;flex-direction:column;justify-content:space-between;gap:5px}
+.layout .wealth-stats>div b{line-height:1.3;margin:0}
+.layout .wealth-art{min-width:0;align-self:center;gap:8px}
+.layout .tree-art{max-width:355px;display:block}
+.layout .goal-card .pro-head>div,.layout .goal-fields{min-width:0;overflow-wrap:anywhere}
+.layout .goal-card .row{gap:8px}
+.layout .goal-action-buttons>button{min-height:44px}
+.layout .bank-top>span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.layout .bank-balance strong{overflow-wrap:anywhere;line-height:1.12}
+.layout .goal-history-row>div{min-width:0;overflow-wrap:anywhere}
+.project-intro{display:grid;gap:22px;padding:26px!important;background:linear-gradient(135deg,#153b40,#285d53);color:#fff;border-color:#315e58}
+.project-intro h2{font-size:clamp(23px,3vw,34px);margin:8px 0 6px;letter-spacing:-.035em}
+.project-intro p{color:#d3e5dc;max-width:650px}
+.project-kicker{font-size:10px;letter-spacing:.14em;font-weight:700;color:var(--muted)}
+.project-intro .project-kicker{color:#c0ddd2}
+.project-intro .help-dot{color:#d6f2e3;background:#ffffff14;border-color:#ffffff50}
+.project-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.project-tab.secondary{justify-content:flex-start;text-align:left;min-width:0;gap:12px;min-height:72px;background:#ffffff0e;color:#f1f8f3;border:1px solid #ffffff2b;padding:12px 14px}
+.project-tab.secondary:hover,.project-tab.secondary[aria-pressed=true]{background:#f1f7ef;color:#153b40;border-color:#f1f7ef}
+.project-tab span:last-child{display:grid;gap:2px;min-width:0}
+.project-tab small{color:inherit;opacity:.85;font-weight:400}
+.project-icon{display:grid;place-items:center;background:var(--soft);color:var(--accent);border-radius:12px;width:42px;height:42px;flex:none}
+.project-tab .project-icon{background:#ffffff20;color:inherit}
+.project-tab[aria-pressed=true] .project-icon{background:#dcece4}
+.project-icon svg{width:23px;height:23px}
+.project-panel{display:grid;gap:24px}
+.project-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.project-head>div{min-width:0}.project-head h2{font-size:22px;margin:4px 0 5px}.project-summary{padding:12px 18px;border:1px solid var(--line);border-radius:12px;background:var(--soft);text-align:right;min-width:155px;max-width:100%}.project-summary small{display:block}.project-summary strong{display:block;font-size:clamp(18px,2.3vw,24px);line-height:1.35;overflow-wrap:anywhere}
+.project-create{border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--soft) 45%,var(--panel));padding:18px}.project-create h3{font-size:15px}.project-create .form{margin-bottom:0}
+.project-card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,285px),1fr));gap:14px;align-items:stretch}
+.project-card{display:flex;flex-direction:column;gap:10px;min-width:0;padding:19px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.project-card-top{display:flex;align-items:center;gap:12px;min-height:42px}.project-card-top h3{font-size:17px;overflow-wrap:anywhere;min-width:0}.project-card .wealth-line{padding:8px 0}.project-card .wealth-inline{margin-top:0}.project-card-footer{display:flex;justify-content:flex-end;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}.project-card-footer button{font-size:12px;padding:7px 11px}.project-empty{display:grid;justify-items:center;gap:7px;text-align:center;padding:28px 18px;border:1px dashed var(--line);border-radius:14px;grid-column:1/-1}.project-empty h3{font-size:16px}
+.private-dialog{width:min(760px,calc(100% - 28px));max-height:90vh}.private-body{display:grid;gap:18px}.private-intro{color:var(--muted);font-size:13px}.private-totals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.private-totals>div{display:grid;gap:4px;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:13px;min-width:0}.private-totals strong{font-size:clamp(16px,2vw,23px);overflow-wrap:anywhere}.private-form{padding:16px;border:1px solid var(--line);border-radius:12px;margin:0!important}.private-form h3,.private-list h3{font-size:15px}.private-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.private-list{display:grid;gap:10px}.private-list article{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px 15px;padding:13px 0;border-bottom:1px solid var(--line)}.private-list article>div{min-width:0;overflow-wrap:anywhere}.private-list article small{display:block}.private-list article p{white-space:pre-wrap;font-size:13px;color:var(--muted)}.private-list article .row{grid-column:1/-1;justify-content:flex-end}.private-list article button{font-size:12px;padding:7px 10px}.private-body>[data-private-lock]{justify-self:end}
+@media(max-width:760px){.layout .header-controls{justify-content:flex-start;gap:7px}.layout .header-controls>button{min-height:40px}.layout .header-controls input{height:40px}.layout .form{grid-template-columns:repeat(auto-fit,minmax(min(100%,145px),1fr));gap:12px}.project-intro{padding:20px!important}.project-tab.secondary{padding:10px;gap:7px;flex-direction:column;align-items:center;text-align:center;min-height:94px}.project-tab .project-icon{width:34px;height:34px}.project-tab small{font-size:11px}.project-head{align-items:flex-start}.project-summary{text-align:left;width:100%}.project-create{padding:13px}.project-panel{gap:18px}.private-totals{grid-template-columns:1fr}.private-fields{grid-template-columns:1fr}}
+@media(max-width:390px){.project-tabs{gap:6px}.project-tab.secondary{padding:8px 4px;font-size:12px}.project-tab small{font-size:10px}.layout .form{grid-template-columns:1fr}.layout .header-controls>button{white-space:normal}}
+@media print{.private-dialog,.project-tabs{display:none!important}}
+/* Fill incomplete rows in default layouts; keep explicit widget sizes untouched. */
+.layout .balance-wide-last{grid-column:1/-1}
+.layout .pro-accounts{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:22px}
+.layout .pro-accounts .bank-item{flex:1 1 290px;max-width:400px;min-width:0}
+@media(min-width:901px){.layout .balance-metric-2,.layout .balance-pair{grid-column:span 6}.layout .balance-metric-1{grid-column:1/-1}}
+@media(max-width:900px){.layout .balance-mobile-last,.layout .balance-pair{grid-column:1/-1}}
+@media(max-width:500px){.layout .balance-metric-1,.layout .balance-metric-2,.layout .balance-metric-3{grid-column:1/-1}.layout .pro-accounts .bank-item{flex-basis:100%;max-width:100%}}
