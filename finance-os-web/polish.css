@@ -72,3 +72,11 @@
 @media(min-width:901px){.layout .balance-metric-2,.layout .balance-pair{grid-column:span 6}.layout .balance-metric-1{grid-column:1/-1}}
 @media(max-width:900px){.layout .balance-mobile-last,.layout .balance-pair{grid-column:1/-1}}
 @media(max-width:500px){.layout .balance-metric-1,.layout .balance-metric-2,.layout .balance-metric-3{grid-column:1/-1}.layout .pro-accounts .bank-item{flex-basis:100%;max-width:100%}}
+
+/* Separate workspace: same visual language, unmistakable mode indicator. */
+.private-switch{white-space:nowrap;gap:7px}
+.private-mode .private-switch{background:var(--accent);color:#fff;border-color:var(--accent)}
+.private-mode-notice{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:12px 16px;border:1px solid var(--line);border-radius:9px;background:var(--soft);color:var(--text);font-size:13px}
+.private-mode-notice span{color:var(--muted)}
+.private-access-intro{display:flex;align-items:flex-start;gap:13px;margin:10px 0 20px}.private-access-intro h3{font-size:16px;margin-bottom:6px}.private-access-intro p{color:var(--muted)}.private-access-symbol{display:grid;place-items:center;width:42px;height:42px;flex:none;border-radius:12px;background:var(--soft);color:var(--accent);font-size:24px}.private-access-form{margin-bottom:14px}.private-search-hint{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:10px 0 14px;padding:10px;border-radius:9px;background:var(--soft)}.private-search-hint button{flex:none}.private-search-hint small{flex:1;min-width:120px}.private-tx-note{display:block;max-width:260px;white-space:normal;overflow-wrap:anywhere;color:var(--muted)}
+@media print{.private-mode-notice,.private-switch{display:none!important}}
