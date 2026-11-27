@@ -62,28 +62,6 @@ Verifiche: 11 test Node superati; sintassi JS verificata; Chromium ha verificato
 ### 0.2.2 — Obiettivi
 Versamenti e prelievi direttamente nella scheda, storico locale, salvadanaio SVG con effetto tridimensionale e animazione delle singole monete e banconote. Il progresso è salvato nello stesso profilo cifrato; gli accantonamenti non generano movimenti bancari. Lo storico parte da questa versione.
 
-### 0.2.3 — Salvadanaio animato
-Monete e banconote individuali con disposizione irregolare deterministica, senza righe. Effetti di entrata e uscita, progresso animato, confetti al primo raggiungimento del 100% mediante un accantonamento. Il pulsante Svuota richiede conferma, registra l'importo esatto nello storico e azzera solo il risparmio dell'obiettivo; martello, frammenti e denaro che cade, poi salvadanaio vuoto. Le animazioni rispettano la preferenza di movimento ridotto. Nessuna modifica ai conti, ai movimenti o allo schema dati. Le illustrazioni sono SVG con profondità simulata, non modelli 3D. Test: 18 Node superati; test UI Chromium con moduli caricati in memoria (navigazione HTTP bloccata dall'ambiente). Verifica pubblicazione e PWA ancora da effettuare.
 
-Aggiornamento: sovrascrivere i file nella stessa sottocartella `finance-os-web` di GitHub Pages, senza aggiungere una sottocartella duplicata. Il pacchetto patch contiene solo i file modificati rispetto a 0.2.2. Conservare un backup cifrato prima di aggiornare; non pubblicare il backup nella repository.
-
-### 0.2.4 — Causali obiettivi
-Campo facoltativo fino a 160 caratteri per accantonamenti, prelievi e svuotamenti. Lo storico mostra la causale quando presente e si apre dopo una nuova operazione. Le operazioni precedenti senza causale restano compatibili; il campo viene salvato nello stesso profilo cifrato. Nessuna modifica ai saldi bancari o alle animazioni. Patch rispetto a 0.2.3.
-Verifiche 0.2.4: 21 test Node superati; test demo Chromium con moduli caricati in memoria: versamento con completamento, prelievo, annullamento e conferma dello svuotamento, nuovo versamento, storico e stati delle animazioni, nessun errore JavaScript. Pubblicazione e PWA non verificate.
-
-### 0.2.5 — Layout obiettivi
-Ogni obiettivo occupa una scheda orizzontale: dati e azioni a sinistra, salvadanaio animato a destra, storico e azioni di gestione sotto. Su schermi stretti le due colonne si dispongono verticalmente. Nessuna modifica al formato dei dati o al motore delle animazioni. Risorse e cache PWA aggiornate per la nuova versione. Test: 21 Node superati; Chromium in memoria ha verificato disposizione desktop (1440 px) e mobile (390 px), versamento, prelievo, annullamento/svuotamento, causali, completamento e storico senza errori JavaScript. Pubblicazione GitHub Pages e aggiornamento della PWA non verificati.
-
-### 0.2.6 — Palette coordinata
-16 colori comuni per interfaccia, carte e salvadanai; le tre preferenze sono indipendenti e salvate nel profilo. Gli obiettivi esistenti senza colore mantengono il verde predefinito. La homepage pubblica conserva lo stile Studio.
-
-### 0.2.7 — Wealth
-Aggiornamento incrementale della versione Palette. Conservati tutti i 24 file originali; `domain.js`, `store.js`, `goals.js`, `pro.js`, `palette.js`, i CSS originali e gli asset sono identici a 0.2.6. Nuovi moduli: `wealth.js`, `wealth-ui.js`, `wealth.css`, `tests/wealth.test.js`.
-- Patrimonio: cassaforte animata per una riserva dichiarata, mappa delle attività e indicatore orientativo di salute finanziaria. La riserva non è un nuovo saldo. Il portafoglio manuale rimane escluso dal patrimonio per evitare doppio conteggio, come nella versione precedente.
-- Portafoglio: albero vettoriale per costo di carico e guadagno non realizzato. Nessun prezzo stimato.
-- Report: Finance Wrapped mensile/annuale, storico reale dei flussi e degli obiettivi.
-- Ricorrenti: abbonamenti, scadenze e costi equivalenti; monogrammi locali, non loghi ufficiali; nessuna disdetta automatica.
-- Pianificazione: desideri collegabili agli obiettivi, acquisti, sfide anche 52 settimane, debiti e rate. Registri separati, senza generazione automatica di movimenti.
-- Diario; allegati immagine ai movimenti (max 300 KB); esportazione selettiva e lettura di copie JSON in chiaro, non sincronizzazione multiutente.
-- I dati aggiuntivi sono salvati nel profilo esistente (`extras` o allegato sul movimento). Mantieni il medesimo URL e fai un backup prima di aggiornare. PWA conservata, cache aggiornata.
-- Test: 30 automatici; navigazione e operazioni principali in Chromium con moduli caricati in memoria e UUID simulati soltanto nel test (restrizioni di rete dell'ambiente). Deploy HTTPS e installazione PWA da verificare.
+## 0.2.3 — archivio completo
+Ripristinata la base 0.2.2 con cifratura AES-GCM e importi a quattro decimali; nessuna migrazione dei dati. Cassaforte con apertura/chiusura, contenuto proporzionale al risparmio e aiuti contestuali accessibili con clic/tastiera. La guida già presente rimane disponibile. Non usare lo ZIP Goals-Guide-Update precedente. I dati non vanno caricati su GitHub.
