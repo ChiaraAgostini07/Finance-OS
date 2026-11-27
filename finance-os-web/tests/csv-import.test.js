@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readCSV,parseDate,parseAmount,suggestMapping,previewCSV,sampleCSV} from '../src/csv-import.js';
+const opts={account:'a',mode:'signed',numberFormat:'auto',dateFormat:'DMY'};
+const parse=(str,extra={},existing=[])=>{let data=readCSV(str);return previewCSV(data,suggestMapping(data.headers),{...opts,...extra},existing)};
+test('CSV originale, con segno e quattro decimali',()=>{let r=parse('date;description;amount\n2026-11-02;Negozio;-12.3456');assert.equal(r[0].tx.amount,-123456)});
+test('CSV italiano con descrizione tra virgolette e decimali con virgola',()=>{let r=parse('Data;Causale;Importo\r\n27/11/2026;"Spesa; pane";-1.234,56');assert.equal(r[0].tx.amount,-12345600);assert.equal(r[0].tx.description,'Spesa; pane')});
+test('CSV internazionale con virgola, virgolette e campi multilinea',()=>{let r=parse('Date,Description,Amount\n2026-11-27,"Shop, ""A""\nreceipt","-1,234.56"');assert.equal(r[0].tx.amount,-12345600);assert.equal(r[0].tx.description,'Shop, "A"\nreceipt')});
+test('Colonne separate accredito e addebito',()=>{let r=parse('Data;Causale;Accredito;Addebito\n27/11/2026;Stipendio;1200;\n27/11/2026;Caffe;;2,50',{mode:'split'});assert.deepEqual(r.map(x=>x.tx.amount),[12000000,-25000])});
+test('Rifiuto date parziali e date impossibili',()=>{for(let d of ['2007.03','2026-02-30','2026-13-01'])assert.throws(()=>parseDate(d));assert.equal(parseDate('02/03/2026','MDY'),'2026-02-03')});
+test('Importo ambiguo richiede formato, importi in valuta estera respinti',()=>{assert.throws(()=>parseAmount('1.234'));assert.equal(parseAmount('1.234','it'),12340000);assert.equal(parseAmount('1.234','en'),12340);assert.throws(()=>parseAmount('$5'))});
+test('Righe non valide, valuta esplicita e duplicati nello stesso conto',()=>{const input='date;description;amount;currency\n2026-11-27;A;-2;EUR\n2026-11-27;A;-2;EUR\n2026-11-27;B;-3;USD\n2026-02-30;C;5;EUR';let r=parse(input);assert.equal(r[0].duplicate,false);assert.equal(r[1].duplicate,true);assert.ok(r[2].error);assert.ok(r[3].error);assert.equal(parse(input,{},[r[0].tx])[0].duplicate,true)});
+test('Dati statistici nazionali rifiutati esplicitamente',()=>assert.throws(()=>readCSV('Period,Inst_sector,Inst_sector_code,Descriptor,SNA08TRANS,Asset_liability_code,Values\n2007.03,Test,121,Net lending,B09,ISA,0'),/statistiche/));
+test('CSV demo importabile',()=>assert.ok(parse(sampleCSV()).every(r=>r.tx&&!r.duplicate)));
